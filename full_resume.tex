@@ -1,4 +1,4 @@
-\documentclass[letterpaper,11pt]{article}
+\documentclass[letterpaper,12pt]{article}
 
 \usepackage{latexsym}
 \usepackage[empty]{fullpage}
@@ -10,6 +10,10 @@
 \usepackage[pdftex]{hyperref}
 \usepackage{fancyhdr}
 \usepackage{arydshln}
+% font
+\usepackage{helvet}
+%icons
+\usepackage{fontawesome}
 
 \pagestyle{fancy}
 \fancyhf{} % clear all header and footer fields
@@ -19,9 +23,9 @@
 
 % Adjust margins
 \addtolength{\oddsidemargin}{-0.375in} 
-\addtolength{\textwidth}{1in}
+\addtolength{\textwidth}{.7in}
 \addtolength{\topmargin}{-.5in}
-\addtolength{\textheight}{1.0in}
+\addtolength{\textheight}{0.5in}
 
 \urlstyle{same}
 
@@ -56,6 +60,13 @@
     \end{tabular*}\vspace{-5pt}
 }
 
+\newcommand{\resumeSubheadingRole}[2]{
+  \vspace{-1pt}\item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      \textit{\small#1} & \textit{\small #2} \\
+    \end{tabular*}\vspace{-5pt}
+}
+
 \newcommand{\resumeSubItem}[2]{\resumeItem{#1}{#2}\vspace{-4pt}}
 
 \renewcommand{\labelitemii}{$\circ$}
@@ -73,61 +84,93 @@
 
 %----------HEADING-----------------
 \begin{tabular*}{\textwidth}{l@{\extracolsep{\fill}}r}
-  \textbf{\Large Josh Cunningham} & Email : \href{mailto:Josh.Cunningham@stfc.ac.uk}{Josh.Cunningham@stfc.ac.uk}\\
-    & Mobile : 07578676611 \\
-    & 1 Partridge Close, Abingdon \\
-    & OX14 4FS
+  \textbf{\Large Josh Cunningham} & \faicon{envelope} : \href{mailto:mail@joshcunningham.dev}{mail@joshcunningham.dev}\\
+    & \faicon{mobile} : (234) 279-1758 \\
+     Tuscaloosa &  \faicon{github} : JoshCu \href{https://git.joshcunningham.dev}{git@joshcunningham.dev}\\
+     AL 35406
 \end{tabular*}
 
-
-%-----------EDUCATION-----------------
-\section{Education}
-  \resumeSubHeadingListStart
-    \resumeSubheading
-      {University of Leicester}{Leicester, UK}
-      {2:1 BSc Computer Science (with Industry)}{Sept. 2014 -- May. 2018}
-    \resumeSubheading
-      {The British School of Brussels }{Tervuren, Belgium}
-      {(A-Levels) (GCSE)}{Sep. 2008 -- July. 2014}
-
-  \resumeSubHeadingListEnd
-
+%-----------Summary--------------------
 
 
 %-----------EXPERIENCE-----------------
 \section{Experience}
   \resumeSubHeadingListStart
-    \resumeSubheading
-      {STFC Scientific Computing Department}{Rutherford Appleton Laboratory, Harwell, UK}
-      {Computer Science Graduate}{Sept 2018 - Present}
+          \resumeSubheading
+      {Alabama Water Institute (University Of Alabama)} {Tuscaloosa, Alabama, USA}
+      {Software engineer (Research Assistant)}{Sept 2023 - Present}
       \resumeItemListStart
       \vspace{2mm}
-        As part of the SCD Graduate Scheme I have completed one six month placement in DCIG (Distributed Computing Infrastructure Group) working for UKRI on the infrastructure portal, one six month placement in the Dynamic Infrastructure Group working on DAaaS (Data Analysis as a Service), and 2 months in DAFNI (Data \& Analytics For National Infrastructure). Over these placements I have gained experience in the following (Any referenced \textit{projects} will be mentioned in the Project section further on):
+        I write, review, and package open source python software.
+        \resumeItemListEnd
+        \begin{center}
+            \hdashline
+        \end{center}
+        \resumeSubheading
+      {University Of Akron} {Akron, Ohio, USA}
+      {Teaching Assistant}{Aug 2022 - Jun 2023}
+      \resumeItemListStart
+      \vspace{2mm}
+        In parallel to my studies, I instruct CS1 Labs, grade work, and tutor students in C++. 
+        \resumeItemListEnd
+        \resumeSubheadingRole
+        {Research Assistant} {Jun 2023 - July 2023}
+        \vspace{-2mm}
+        \resumeItemListStart
+        Designed and manufactured apparatus to run and monitor experiments remotely. I used 3D modelling + printing for mechanical components and a desktop CNC for the custom PCBs I designed.
+        \resumeItemListEnd
+        \begin{center}
+            \hdashline
+        \end{center}
+
+      \resumeItemListEnd
+      \resumeSubheading
+      {STFC SCD Dynamic Infrastructure Group} {Rutherford Appleton Laboratory, Harwell, UK}
+      {DevOps Engineer \textit{and Scrum Master}}{Feb 2020 - Aug 2022}
+      \resumeItemListStart
+      \vspace{2mm}
+        I streamlined development processes, improved monitoring, and worked with some of the world's leading laser and particle physics research facilities to improve the stability and performance of a novel research platform. 
+        \newline
         \begin{center}
         \hdashline
         \end{center}
-        \resumeItem{AGILE methodologies, scrum & sprints}
-		  {I was part time scrum master while working on DAaaS and currently work in an AGILE environment in DAFNI.}
-        \resumeItem{RESTful APIs}
-		  {DAFNI is built as Django Micro-services which use REST APIs to interact with each other. The \textit{notification service} I developed is one such service.}
-        \resumeItem{Unit Testing}
-		  {As the DAFNI Micro-services are constantly evolving, it's important that all new functionality and services are thoroughly unit tested to reduce bugs.}
-        \resumeItem{Containerisation}
-		  {All DAFNI application are deployed on a Kubenetes to allow this, everything must be containerised in docker containers.}
-        \resumeItem{Automated Unit Tests,  CI & CD}
-		  {All DAFNI applications are automatically unit tested, built, then deployed as part of their Continuous Integration and Continuous Deployment pipeline. So I gained experience configuring this for the \textit{notification service}.}
-        \resumeItem{Package Management}
-		  {All DAaaS infrastructure systems can be installed as RPM packages, I packaged both the \textit{Archive Replication service} and the \textit{RB Manager} when developing them. I also created the RPM template repo DAaaS currently use for packaging new applications.}
-        \resumeItem{Systemd services}
-		  {I developed both the \textit{Archive Replication Service} and the \textit{RB Manager} to be run as system.d services.}
-        \resumeItem{Linux Systems}
-		  {While working on the \textit{infrastructure portal} and DAaaS, I gained familiarity with SL7 and Centos 7 linux distributions.}
-        \resumeItem{Web design}
-		  {While working on infrastructure portal I designed almost all of the UI.}
+        \resumeItem{Downtime reduction of 92\%}
+          {Once deployed, the projects I lead and developed resulted in a 92\% reduction in downtime over 12 months. Mostly attributable to the CICD Pipeline, Configuration Management, and Detailed Monitoring \& Alerting.}
+        \resumeItem{Continuous Integration and Deployment}
+          {I designed and implemented the full CICD Pipeline for the platform, using a combination of DevOps tools and bespoke scripts. This enabled faster, safer releases, allowed for rapid iteration of new features and fixes, and reduced downtime.}
         \resumeItem{Configuration Management}
-		  {The \textit{infrastructure portal}'s web front end is configuration managed by Aquilon configuration management, and I gained experience writing and using Ansible configuration management while working in DAaaS.}
-		\resumeItem{Working in a Production Environment}
-          {DAaaS was operating in production while I was there and I was involved in the day to day monitoring and maintaining of services.}
+          {I designed, developed, and deployed the automatic configuration for all of the permanent infrastructure. This allowed for repeatable dev environments, rapid recovery in the case of failure, and allowed horizontal scaling of our applications for the first time (along with some software changes I implemented).}
+        \resumeItem{Monitoring \& Alerting}
+          {I integrated detailed hardware and software monitoring into existing architecture across thousands of cloud machines. The additional information reduced ticket resolution time and allowed more efficient load balancing across resources. I also worked with colleagues to create intelligent alerts to detect incidents before they escalated.}
+        \resumeItem{Linux module dev}
+          {I developed a new user management system that ties into the existing Linux kernel. This was achieved with a custom NSS module designed to contact a REST API. This removed an active user growth limitation and the overhead of more complex legacy architecture.}
+        \resumeItem{Data Management}
+          {I advised and worked with research organizations to build software that manages hundreds of petabytes of data over billions of files. The most notable was an archival system that reduced hardware cost 80\% by automatically categorizing data and moving it off spinning disk to tape storage.}
+          
+
+      \resumeItemListEnd
+
+      
+    \resumeSubheading
+      {STFC Scientific Computing Department}{Rutherford Appleton Laboratory, Harwell, UK}
+      {Computer Science Graduate}{Sept 2018 - Feb 2020}
+      \resumeItemListStart
+      \vspace{2mm}
+        Before I chose my permanent role, I worked in three departments performing a variety of Software Dev, Sysadmin, Operations, and DevOps work.
+        \begin{center}
+        \hdashline
+        \end{center}
+        \resumeItem{SCRUM, Agile methodologies, \& sprints}
+		  {I was a scrum master for 3 years across different teams, managing effort and balancing priorities with a mixture of Support, Operations, and Development workloads.}
+        \resumeItem{REST, Containerisation, \& Microservices}
+            {I developed a notification service, deployable in docker, that was responsible for brokering messages to users in different forms (email, push notification, etc). Inter-service communication was achieved with Django REST APIs and asynchronous email required integration with a message queue system. I created a prototype docker sidecar and client api to asynchronously add messages to RabbitMQ.}
+
+        \resumeItem{Automated Unit Tests,  CI \& CD}
+		  {I wrote thorough unit tests for each service I developed and every service for which I configured the CICD. }
+        \resumeItem{Linux Systems}
+		  {All of my development, deployment, and maintenance work was performed on virtual machines or containers running no gui Linux}
+        \resumeItem{Web design - \href{https://infraportal.org.uk}{infraportal.org.uk}}
+		  {I designed, created, configured, styled, named, and imported all the survey data into the infraportal, which is the UK's flagship catalog of publicly funded research infrastructure designed to promote collaboration. }
 		  
       \resumeItemListEnd
 		  
@@ -136,88 +179,70 @@
       {Junior Software Developer}{July 2016 - July 2017}
       \resumeItemListStart
       \vspace{2mm}
-        For my year in industry I worked in the Software Development department in the Ashfield Healthcare Head Office. As it was a small team, the projects I worked on were quite varied. The following is a list of the most notable experience. (Any referenced \textit{projects} will be mentioned in the Project section further on)
+        During my year in industry, I worked for the software team at Ashfield Healthcare. My role responsibilities were diverse, but my most valuable contributions were personal projects, an admin tool I created to speed up ticket resolution and automate arduous business processes.
         \begin{center}
         \hdashline
         \end{center}
-		\resumeItem{Web Development}
-		  {I worked extensively on several in-house applications written in ASP.Net doing general bug fixing to reduce user issues, making requested changes, and deploying web apps to Microsoft servers.}
-		\resumeItem{Client Interaction}
-		  {During projects I managed, I regularly contacted and met clients to discuss what progress has been made, any roadblocks, and possible improvements to the implementation of their requested changes.}
-		\resumeItem{Presenting in Meetings}
-		  {A big part of these client meetings was being able to show and articulate what had been achieved. As some of the clients weren't of a technical background, it was paramount to their understanding that I presented what had been done in a clear, concise, and relate-able way.}
-		\resumeItem{User Documentation}
-		  {To help the users learn how to use \textit{ACAT} I wrote extensive documentation on all the features, with some handy tips and a couple of example workflows.}
-		\resumeItem{Lead Developer}
-		  {I was the lead developer for \textit{ACAT}, and took all the responsibility that entailed. This included: bug fixing, managing changes, collecting user feedback, and training new users or developers on it.}
-		\resumeItem{User Support}
-		  {Part of my daily duty involved responding to and resolving tickets about our applications in our help desk system, I was also always logged into a telephone queue ready to receive calls from users experiencing software issues.}
+        \resumeSubItem{Admin Tool}
+          {I designed, built, and continuously improved an admin tool later adopted by Three other departments to save time by automating fixes for common help desk tickets.}
+        \resumeSubItem{Business Process Automation}
+          {While working support I noticed intermittent errors and delay in the new hire onboarding process. After my investigation revealed the HR system emailed another department who then manually configured accounts, I created a service that would parse the emails and create the accounts automatically. }
+
 
       \resumeItemListEnd
       
-
-
-%-----------PROJECTS-----------------
-\section{Projects}
-  \resumeSubHeadingListStart
-  
-    \resumeSubItem{DAFNI Notification Service}
-      {This Django application handles notifying and emailing users asynchronously using rabbitMQ and py-autoqueue}
-    \resumeSubItem{py-autoqueue}
-      {This is a queue consuming application written in python that takes messages off a rabbitMQ queue and posts them to a worker web app. It's designed to be run as a separate sidecar pod in a container with the worker.}
-    \resumeSubItem{NoVNC In browser copy \& paste}
-      {Building on top of the noVNC javascript VNC client library, I created an interface that allowed the intuitive copying and pasting of text into the browser window, onto the virtual machine you're connected to.}
-    \resumeSubItem{ISIS Archive Replication Service}
-      {Developed in python to run as a system.d service, this application mounts remote machines that contain scientific instrument data, then copies it to high availability, higher bandwidth storage}
-    \resumeSubItem{RB Manager - data folder management service}
-      {This is an application that was developed in python to run as a system.d service, that created, managed and applied ACL permissions to folders.}
-    \resumeSubItem{Infrastructure Portal - https://infraportal.org.uk }
-      {This Portal is built using Drupal CMS and is a fully search-able database containing details of accessible publicly funded RIIs both in the UK and overseas. The main objective for the portal is to allow people to discover UK-accessible capabilities and expertise within the research and innovation infrastructure system.}
-    \resumeSubItem{ACAT - Ashfield Core Admin Tool}
-      {This was a windows desktop administration tool I designed, built, and continuously expanded and improved to automate fixes for most of the common help desk tickets. Widely adopted by several departments once they saw the potential time that could be saved by using it.}
-    \resumeSubItem{Online Questionnaire and Test tool }
-      {For my dissertation Project, which I'm in the process of writing, I am creating an online questionnaire tool that also allows for marked quizzes.}
-    \resumeSubItem{Chat Bot}
-      {In my spare time I've created a chat bot for a discord group I belong to that can be controlled through a series of custom commands. Discord is very similar to slack, just more for general consumer use.}
-    
-    
+   
   \resumeSubHeadingListEnd
 
 
 %--------PROGRAMMING SKILLS------------
-\section{Programming Skills}
+\section{Programming Skills (in order of proficiency)}
   \resumeSubHeadingListStart
     \item{
-      \textbf{Languages}{: Python3, BASH, SQL, Javascript, HTML, Java, C\#, ASP.Net, VB.Net, CSS, Python2, LaTeX}
-      \hfill
-
+      \textbf{Programming}{: Python3\footnote{The majority of professional production and personal software I've written is in python3}, Git, BASH, C, Javascript, C++,C\#, Python2, LaTeX}}
+      \item{
+      \textbf{Front-end}{: HTML, ASP.Net, CSS}}      
+      \item{
+      \textbf{Back-end}{: FastAPI, CherryPy, Django, REST APIs, SQL, MongoDB, SQLAlchemy}}
+      \item{
+      \textbf{DevOps}{: Ansible, Openstack Cloud, Github Actions, Prometheus, Grafana, Docker, Kubenetes, Linux}
     }
-    \item{
-          \textbf{Technologies}{:Ansible, Django, Docker, Kubenetes, AutoKube (simliar to jenkins CI), PyTest, Drupal, Entity Framework, Jquery, Apache}
-          }
+    
+
   \resumeSubHeadingListEnd
 
-%-----------Academic-------
-\section{Academics}
-\begin{center}
-\begin{tabular}{ c c } 
- University Modules\\
- \hline
- Automata, Languages \& Computation & Computer Systems\\ 
- Data Structures \& Development Environments & Databases \& Web Application\\
- Discrete Structures & Functional Programming\\
- Logic \& Problem Solving & Multimedia \& Computer Graphics\\
- OS, Networks \& Distributed Systems  & Program Design\\
- Requirements Engineering & Software Engineering \& System Development\\
- Software Engineering Project & Software Project Management\\
- User Interfaces \& HCI & \\
- Computational Intelligence \& Software Engineering & Big Data \& Predictive Analytics \\
- Software Measurement \& Quality Assurance & Compression Methods for Multimedia \\
- \hline
-\end{tabular}
-\end{center}
-
-
-
 %-------------------------------------------
+
+%-----------EDUCATION-----------------
+\section{Education}
+  \resumeSubHeadingListStart
+      \resumeSubheading
+      {University of Alabama}{Tuscaloosa, Alabama, USA}
+      {Masters of Computer Science Current GPA 4.0}{Aug. 2023 -- Present (estimated graduation June 2024)}
+    \resumeSubheading
+      {University of Akron}{Akron, Ohio, USA}
+      {Masters of Computer Science GPA 4.0}{Aug. 2022 -- Aug. 2023 (Transferred to Alabama)}
+    \resumeSubheading
+      {University of Leicester}{Leicester, UK}
+      {2:1\footnote{Roughly 3.6 gpa accounting when translating individual weighted class grades} BSc Computer Science (with Industry)}{Sept. 2014 -- May. 2018}
+    \resumeSubheading
+      {The British School of Brussels }{Tervuren, Belgium}
+      {(A-Levels) (GCSE)}{Sep. 2008 -- July. 2014}
+
+  \resumeSubHeadingListEnd
+
+\section{Personal Interests)}
+  \resumeSubHeadingListStart
+    \item{
+      \textbf{Machine Learning}{: I have a keen interest in deep learning and conducted research using Graph Neural networks to predict the odour of molecules based on structure. 
+I have also been experimenting with OpenAI's gpt API since I got access to it in march. I've been working on a few tools to automatically generate documentation and unit tests for software I've written. I also wrote a utility that suggested tips to improve the CS1 code I was grading. Even after manually verifying correctness it enabled me to provide much more comprehensive and personalised grading.}}
+      \item{
+      \textbf{3D design and printing}{: I enjoy making and inventing things, from simple organisers to battery-powered handheld solder-feeding tools. To truly refine software I believe in getting a minimum viable product quickly and then iterating over it, fixing the weak points each generation. When making something, the same holds true. 3D design and printing allow me to rapidly prototype ideas until they're both functional and refined} }
+      \item{
+      \textbf{Home server}{: For my machine learning research I created two compute servers from old liquidated server hardware. I enjoyed the challenge of combining the hardware and getting it running. It also massively reduced the cost of the machines. When not training models I have them run smart home monitoring and a network file system with Elastic search powered full-text search.}}
+      \item{
+      \textbf{Quadcopters}{: I build, repair and fly First-person racing drones. }}
+
+
+  \resumeSubHeadingListEnd
 \end{document}
